@@ -27,6 +27,7 @@ const server = http.createServer(function(req, res){
         res.write("error")
       } else {
         res.write(data)
+        res.end()
       }
     })
   } else {
@@ -40,11 +41,11 @@ const server = http.createServer(function(req, res){
           res.writeHead(200, {'Content-Type': 'text/html'})
           res.write(data)
       }
-      
       res.end()
+      
   })
   }
-
+  
 })
 
 server.listen(port, (error) => {
