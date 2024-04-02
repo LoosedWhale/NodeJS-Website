@@ -1,19 +1,33 @@
 const http = require('http')
 const fs = require('fs')
 var url = require('url')
+var path = require('path')
 const port = 3000
 
 
 const server = http.createServer(function(req, res){
-  var path = url.parse(req.url, true) 
+  var urlname = url.parse(req.url, true) 
   var filename = 'index.html'
   
-  if (path.pathname != '/'){
-    filename = path.pathname.slice(1)
+  if (urlname.pathname != '/'){
+    filename = urlname.pathname.slice(1)
   }
-  
-  
-  console.log(filename)
+
+  var ext = path.extname(url.parse(req.url).pathname)
+  if (ext){
+    if (ext === '.css'){
+      res.writeHead(200, {'Content-Type': 'text/css'})
+    } else if (ext === '.js'){
+      res.writeHead(200, {'Content-Type': 'text/javascript'})
+    }
+
+    res.write(fs.readFileSync(__dirname + url.parse(req.url).pathname))
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'})
+    res.write(fs.readFileSync(filename))
+  }
+  res.end()
+  /*
   fs.readFile(filename, function(err, data) {
         if (err) {
             res.writeHead(404)
@@ -26,6 +40,7 @@ const server = http.createServer(function(req, res){
         
         res.end()
     })
+    */
 })
 
 server.listen(port, (error) => {
