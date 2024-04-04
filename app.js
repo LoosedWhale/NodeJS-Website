@@ -2,7 +2,10 @@ const http = require('http')
 const fs = require('fs')
 var url = require('url')
 var path = require('path')
+
 const port = 3000
+
+
 
 const server = http.createServer(function(req, res){
   var urlname = url.parse(req.url, true) 
