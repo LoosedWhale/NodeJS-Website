@@ -17,6 +17,18 @@ const port = 3000
 
 
 const server = http.createServer(function(req, res){
+  //updaterar värden
+
+
+    var content = "var visitors = 1;"
+    fs.writeFile("javascript/values.js", content, 'utf-8', function(err){
+      if (err) return console.log(err);
+    });
+
+  
+
+
+  //
   var urlname = url.parse(req.url, true) 
   var filename = 'index.html'
   

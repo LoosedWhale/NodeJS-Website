@@ -1,6 +1,5 @@
 
 
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -31,14 +30,12 @@ function showSlides(n) {
 }
 
 function viewvisitor(){
-  var sqlite3 = require('sqlite3').verbose();
-  var db = new sqlite3.Database('mydatabase');
   
+  
+
   let texter = document.getElementById("viewer");
 
-  var visitors = db.get("SELECT COUNT FROM visitor")
 
-  var uniquevisitors;
-
-  texter.innerHTML = visitors;
+  
+  texter.innerHTML = window.visitors;
 }
