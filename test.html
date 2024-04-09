@@ -18,8 +18,19 @@
     </nav>
     
     <div class="siteContent">
-        <aside>Kalender<input type="datetime-local" name="Kalender"> </aside>
+
+        
+        <aside>
+            <br>Kalender<input type="datetime-local" name="Kalender"> 
+        
+            <div id="viewer"></div>
+            <script>viewvisitor()</script>
+
+        </aside>
+        
+
         <article>
+            
             <!-- Slideshow container -->
             <div class="slideshow-container">
 
@@ -67,5 +78,7 @@
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
         </script>
     </div>
+
+    
 </body>
 </html>

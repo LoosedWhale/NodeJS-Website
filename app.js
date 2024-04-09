@@ -8,6 +8,8 @@ var path = require('path')
 var sqlite3 = require('sqlite3').verbose()
 var db = new sqlite3.Database('mydatabase')
 
+//db.run("CREATE TABLE visitor (ip TEXT)")
+
 
 
 const port = 3000
@@ -17,6 +19,7 @@ const port = 3000
 const server = http.createServer(function(req, res){
   var urlname = url.parse(req.url, true) 
   var filename = 'index.html'
+  
   
   //kollar om vi är på en sida
   if (urlname.pathname != '/'){
@@ -41,6 +44,10 @@ const server = http.createServer(function(req, res){
       }
     })
   } else {
+    //spara besök i databas, här för att köra en gång.
+    db.run("INSERT INTO visitor (ip) VALUES ('" + req.socket.remoteAddress + "')")
+    
+
     //laddar in html-filen
     fs.readFile(filename, function(err, data) {
       if (err) {
@@ -48,8 +55,10 @@ const server = http.createServer(function(req, res){
           res.write('Error: File Not Found')
       } else {
           
+
           res.writeHead(200, {'Content-Type': 'text/html'})
           res.write(data)
+          
       }
       res.end()
       
