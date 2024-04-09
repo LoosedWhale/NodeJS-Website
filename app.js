@@ -1,7 +1,14 @@
+//server
 const http = require('http')
 const fs = require('fs')
 var url = require('url')
 var path = require('path')
+
+//databas
+var sqlite3 = require('sqlite3').verbose()
+var db = new sqlite3.Database('mydatabase')
+
+
 
 const port = 3000
 
