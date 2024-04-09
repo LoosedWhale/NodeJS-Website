@@ -17,13 +17,21 @@ const port = 3000
 
 
 const server = http.createServer(function(req, res){
+  
   //updaterar värden
+    db.get("SELECT COUNT(*) count FROM visitor", function(err, row){
+      var rowcount = row.count;
 
-
-    var content = "var visitors = 1;"
-    fs.writeFile("javascript/values.js", content, 'utf-8', function(err){
+      var content = "var visitors = "+ rowcount +";"
+    
+      fs.writeFile("javascript/values.js", content, 'utf-8', function(err){
       if (err) return console.log(err);
     });
+    });
+  
+    
+
+    
 
   
 
