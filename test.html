@@ -15,6 +15,8 @@
 
     <nav>
         <a href="index.html"><div class="navButton">Home</div></a>
+        <a href="#about"><div class="navButton">About</div></a>
+        <a href="#exit"><div class="navButton">Exit</div></a>
 
     </nav>
     
@@ -22,48 +24,61 @@
 
         
         <aside>
-            <br>Kalender<input type="datetime-local" name="Kalender"> 
-        
-            <div id="viewer">Hello</div>
-            <button onclick="viewvisitor()"></button>
+            <h1>Kalender</h1>
+            <input type="datetime-local" name="Kalender"> 
+            <br><br>
+            <h1 id="viewer">Antal unika inloggningar</h1>
+            <button onclick="viewvisitor()">Visa unika inloggningar</button>
+            <br><br>
+            <img src="images/flowers/flower4.jpg" class="imageFlower"> 
 
         </aside>
         
 
         <article>
-            
-            <!-- Slideshow container -->
-            <div class="slideshow-container">
+            <div class="box">
 
-                <!-- Full-width images with number and caption text -->
-                <div class="mySlides fade">
-                <img src="images/flowers/flower1.jpg" class="imageFlower">
-                <div class="text">Flower Purple</div>
+                <div class="boxtitle"><b>Slideshow</b></div>
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                    <img src="images/flowers/flower1.jpg" class="imageFlower">
+                    <div class="text">Flower Purple</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                    <img src="images/flowers/flower2.jpg" class="imageFlower">
+                    <div class="text">Flower Two</div>
+                    </div>
+                
+                    <div class="mySlides fade">
+                    <img src="images/flowers/flower4.jpg" class="imageFlower">
+                    <div class="text">Big Flower</div>
+                    </div>
+                
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-            
-                <div class="mySlides fade">
-                <img src="images/flowers/flower2.jpg" class="imageFlower">
-                <div class="text">Flower Two</div>
+                <br>
+                
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
-            
-                <div class="mySlides fade">
-                <img src="images/flowers/flower4.jpg" class="imageFlower">
-                <div class="text">Big Flower</div>
-                </div>
-            
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <script>currentSlide(1)</script>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Libero id faucibus nisl tincidunt eget nullam non. Quis blandit turpis cursus in hac habitasse platea dictumst. Massa placerat duis ultricies lacus sed turpis tincidunt id. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. Eget est lorem ipsum dolor sit amet consectetur adipiscing. Sagittis orci a scelerisque purus. Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. A erat nam at lectus urna duis convallis convallis tellus. Sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. Porttitor lacus luctus accumsan tortor posuere ac ut consequat semper.</p>
+                <h1>Title</h1>
+
+                Cras sed felis eget velit aliquet sagittis id consectetur. Lorem ipsum dolor sit amet consectetur. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Amet facilisis magna etiam tempor. Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Tellus in hac habitasse platea. Neque laoreet suspendisse interdum consectetur. Egestas pretium aenean pharetra magna ac placerat. Vestibulum mattis ullamcorper velit sed ullamcorper. Tincidunt augue interdum velit euismod. Dui sapien eget mi proin. Auctor augue mauris augue neque gravida.
+                
+                
             </div>
-            <br>
-            
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-            <script>currentSlide(1)</script>
         </article> 
 
     </div>
