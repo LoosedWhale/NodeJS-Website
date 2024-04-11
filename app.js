@@ -19,7 +19,7 @@ const port = 3000
 const server = http.createServer(function(req, res){
   
   //updaterar värden
-    db.get("SELECT COUNT(*) count FROM visitor", function(err, row){
+    db.get("SELECT COUNT(DISTINCT ip) AS count FROM visitor", function(err, row){
       var rowcount = row.count;
 
       var content = "var visitors = "+ rowcount +";"

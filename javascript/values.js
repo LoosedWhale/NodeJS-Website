@@ -1,1 +1,1 @@
-var visitors = 4;
+var visitors = 2;
