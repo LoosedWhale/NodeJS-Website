@@ -11,6 +11,8 @@ body {
     max-width: 1200px;
     margin: auto;
     background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 9px;
+
 }
 
 
@@ -47,10 +49,11 @@ nav{
     font-size: 20px;
     line-height: 30px;
     border-radius: 4px;
-    box-shadow: 3px 3px 4px black;
-    
-    
+    box-shadow: 3px 3px 4px black;   
+    text-decoration: none;
+    color: black;
 }
+
 
 .siteContent{
     display: flex;
