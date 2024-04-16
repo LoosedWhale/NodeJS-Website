@@ -29,13 +29,4 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-function viewvisitor(){
-  
-  
 
-  let texter = document.getElementById("viewer");
-
-
-  
-  texter.innerHTML = window.visitors;
-}

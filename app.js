@@ -17,26 +17,7 @@ const port = 3000
 
 
 const server = http.createServer(function(req, res){
-  
-  //updaterar värden
-    db.get("SELECT COUNT(DISTINCT ip) AS count FROM visitor", function(err, row){
-      var rowcount = row.count;
-
-      var content = "var visitors = "+ rowcount +";"
-    
-      fs.writeFile("javascript/values.js", content, 'utf-8', function(err){
-      if (err) return console.log(err);
-    });
-    });
-  
-    
-
-    
-
-  
-
-
-  //
+  //sida
   var urlname = url.parse(req.url, true) 
   var filename = 'index.html'
   
@@ -64,9 +45,6 @@ const server = http.createServer(function(req, res){
       }
     })
   } else {
-    //spara besök i databas, här för att köra en gång.
-    db.run("INSERT INTO visitor (ip) VALUES ('" + req.socket.remoteAddress + "')")
-    
 
     //laddar in html-filen
     fs.readFile(filename, function(err, data) {
