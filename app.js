@@ -6,17 +6,32 @@ var path = require('path')
 
 //databas
 var sqlite3 = require('sqlite3').verbose()
-var db = new sqlite3.Database('mydatabase')
+var db = new sqlite3.Database('mydatabase.db')
 
 //db.run("CREATE TABLE visitor (ip TEXT)")
 
 
 
+
+//om server connectas till
 const port = 3000
 
-
-
 const server = http.createServer(function(req, res){
+  
+  //kollar om vi fått post
+  if (req.method == 'POST'){
+    
+    console.log("post recieved");
+    
+    var body = ''
+    req.on('data', function(data) {
+      body += data
+      
+      console.log('Partial body: ' + body.toString())
+    })
+  }
+  
+  
   //sida
   var urlname = url.parse(req.url, true) 
   var filename = 'index.html'
@@ -64,6 +79,8 @@ const server = http.createServer(function(req, res){
   }
   
 })
+
+
 
 server.listen(port, (error) => {
     if(error){
